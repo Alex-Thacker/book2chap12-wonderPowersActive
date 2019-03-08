@@ -4,25 +4,16 @@ let xRay = document.getElementById('xray');
 let allPowers = document.querySelectorAll('.power');
 console.log(allPowers.length)
 
+let oneFunction = () => {
+    let split = event.target.id.split("-")
+    console.log(split);
+    let secondId = document.getElementById(split[1])
+    secondId.classList.toggle('disabled');
+    secondId.classList.toggle('enabled');
+}
 
 
-function flightHandlerFunction() {
-    flight.classList.toggle('disabled');
-    flight.classList.toggle('enabled');
 
-};
-
-function mindReadingHandlerFunction() {
-    mindReading.classList.toggle('disabled');
-    mindReading.classList.toggle('enabled');
-
-};
-
-function xRayHandlerFunction() {
-    xRay.classList.toggle('disabled');
-    xRay.classList.toggle('enabled');
-
-};
 
 function activeAll() {
     allPowers.classList.toggle('disabled');
@@ -30,13 +21,13 @@ function activeAll() {
 }
 
 
-document.querySelector("#activate-flight").addEventListener('click', flightHandlerFunction)
+document.querySelector("#activate-flight").addEventListener('click', oneFunction)
 
 
 
-document.querySelector("#activate-mindreading").addEventListener('click', mindReadingHandlerFunction)
+document.querySelector("#activate-mindreading").addEventListener('click', oneFunction)
 
-document.querySelector("#activate-xray").addEventListener('click', xRayHandlerFunction)
+document.querySelector("#activate-xray").addEventListener('click', oneFunction)
 
 // for (let i = 0; i < allPowers.length; i++){
 //     document.querySelector('#activate-all').addEventListener('click', function(){
